@@ -2,12 +2,12 @@
 body {
   margin: 0;
   font-family: 'Inter', Helvetica, Arial, sans-serif;
-  background-color: #000; /* fallback in case gradient fails */
+  background-color: #0b0c10; /* fallback in case gradient fails */
 }
 
 /* Hero section gradient background */
 .hero-section {
-  background: linear-gradient(to bottom right, #f6b23e, #b34700);
+  background: linear-gradient(to bottom right, #2c3e50, #4ca1af);
   color: #fff;
 }
 
@@ -39,15 +39,15 @@ body {
 }
 
 .btn-warning {
-  background-color: #ffb547;
-  border-color: #ffb547;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 .btn-warning:hover {
-  background-color: #ffa726;
-  border-color: #ffa726;
+  background-color: #0056b3;
+  border-color: #0056b3;
 }
 
 .section-beige {
-  background-color: #f5f5dc;
+  background-color: #f8f9fa;
 }
