@@ -22,8 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
           localStorage.setItem('token', data.token);
           alert('Login successful');
           const modalEl = document.getElementById('loginModal');
-          const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
-          modal.hide();
+          if (modalEl) {
+            const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+            modal.hide();
+          } else if (window.location.pathname.endsWith('login.html')) {
+            window.location.href = 'index.html';
+          }
         } else {
           errorEl.classList.remove('d-none');
         }

@@ -4,7 +4,7 @@ This repository contains a simple landing page for **ZENKORO**.
 
 ## Running the Frontend
 
-Open `index.html` in your browser to see the page. Styling is provided in `style.css`. The page includes a login modal handled by `login.js`.
+Open `index.html` in your browser to see the page. Styling is provided in `style.css`. The login button links to `login.html`, which uses `login.js` to communicate with the backend.
 
 ## Backend Server
 
