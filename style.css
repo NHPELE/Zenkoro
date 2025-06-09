@@ -1,0 +1,53 @@
+/* Base typography and layout */
+body {
+  margin: 0;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  background-color: #000; /* fallback in case gradient fails */
+}
+
+/* Hero section gradient background */
+.hero-section {
+  background: linear-gradient(to bottom right, #f6b23e, #b34700);
+  color: #fff;
+}
+
+/* Circular icon placeholders */
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle i {
+  font-size: 1.5rem;
+}
+
+/* Additional styling */
+.card {
+  border: none;
+}
+
+.card.bg-dark {
+  background-color: #111 !important;
+}
+
+.card h3 {
+  color: #fff;
+}
+
+.btn-warning {
+  background-color: #ffb547;
+  border-color: #ffb547;
+}
+
+.btn-warning:hover {
+  background-color: #ffa726;
+  border-color: #ffa726;
+}
+
+.section-beige {
+  background-color: #f5f5dc;
+}
