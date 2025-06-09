@@ -1,15 +1,9 @@
 // Front-end login script communicating with the backend
-
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('login-form');
-  const errorEl = document.getElementById('login-error');
-
-  if (form) {
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
+form.addEventListener('submit', async function (e) {
+   e.preventDefault();
       const username = document.getElementById('username').value.trim();
       const password = document.getElementById('password').value.trim();
-
+  
       try {
         const resp = await fetch('/api/login', {
           method: 'POST',
