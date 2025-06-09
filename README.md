@@ -1,4 +1,3 @@
-# Zenkoro
 
 This repository contains a simple landing page for **ZENKORO**.
 
