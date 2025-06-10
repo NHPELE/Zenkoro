@@ -1,3 +1,4 @@
+// Simple Express server with JWT authentication
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -9,6 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'dev_secret';
 
+// Middleware for security and JSON parsing
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
@@ -17,10 +19,12 @@ app.use(express.json());
 const users = [
   {
     username: 'user',
-    passwordHash: '$2b$10$AFhJR.hn4wnKtnVI2YTOaObA9RahyJt3fVeW06Du5m5YP75IoRU6S'
+    // password: 12345
+    passwordHash: '$2b$10$Km2mbth7vcOfvjoh.lFUVOrlb6igqOKLJqH4TiR3KO/CR8c4J8SKO'
   }
 ];
 
+// Basic login endpoint
 app.post('/api/login', async (req, res) => {
   const { username, password } = req.body;
   if (!username || !password) {
@@ -41,6 +45,7 @@ app.post('/api/login', async (req, res) => {
   res.json({ token });
 });
 
+// Only start the server if this file is executed directly
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

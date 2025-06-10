@@ -3,182 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ZENKORO - Smart Portfolio Analytics</title>
-  <!-- Bootstrap 5 CSS -->
+  <title>Zenkoro - Smart Portfolio Analytics</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet" />
-  <!-- Google Font (Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 </head>
-<body class="text-dark">
+<body>
 
-<!-- Hero Section -->
-<section class="hero-section py-5">
+<!-- Hero section with brand heading and sample chart -->
+<section class="hero-section">
   <div class="container">
-    <div class="row align-items-center">
-      <!-- Left: Brand title, tagline, and button -->
-      <div class="col-md-6 mb-4 mb-md-0">
-        <h1 class="display-2 fw-bold text-uppercase">ZENKORO</h1>
-        <p class="lead mb-4">Your DeFi portfolio in one secure dashboard.</p>
-        <button class="btn btn-warning btn-lg rounded-pill shadow me-2" onclick="connectWallet()">
-          <i class="bi-wallet-fill me-1"></i> Connect Wallet
-        </button>
-        <a href="login.html" class="btn btn-outline-light btn-lg rounded-pill shadow">
-          <i class="bi-box-arrow-in-right me-1"></i> Login
-        </a>
-        <p class="small mt-3 opacity-75">
-          <i class="bi-shield-lock-fill me-1"></i> Non-custodial &amp; Encrypted
-        </p>
-      </div>
-      <!-- Right: Portfolio preview card -->
+    <h1 class="display-2 fw-bold brand-font mb-3">Zenkoro</h1>
+    <p class="lead mb-4">Smart Portfolio Analytics. Private by Design.</p>
+    <button class="btn btn-primary btn-lg rounded-pill mb-5" onclick="connectWallet()">
+      <i class="bi-wallet2 me-1"></i> Connect Wallet
+    </button>
+    <div class="chart-container mx-auto">
+      <!-- Hero preview chart -->
+      <canvas id="heroChart" height="200"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- Overview of analytics features -->
+<section class="section-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Analytics at a Glance</h2>
+    <div class="row align-items-center mb-5">
       <div class="col-md-6">
-        <div class="card bg-dark text-light shadow rounded-4 p-4">
-          <!-- Top info: Asset type (dropdown label) and user name -->
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <span class="badge bg-light text-dark">
-              AUD: Oil <i class="bi-caret-down-fill"></i>
-            </span>
-            <span class="small opacity-75">Levi Sive Avio</span>
-          </div>
-          <!-- Balance and daily change -->
-          <h3 class="fw-bold mb-0">$12,450.32</h3>
-          <p class="mb-4">
-            <span class="text-success fw-semibold">+2.87%</span>
-          </p>
-          <!-- Placeholder performance chart (SVG line chart) -->
-          <svg width="100%" height="100" viewBox="0 0 100 50" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="gradLine" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#6a11cb"/>
-                <stop offset="100%" stop-color="#2575fc"/>
-              </linearGradient>
-            </defs>
-            <polyline points="0,30 10,25 20,28 30,20 40,22 50,15 60,18 70,10 80,12 90,5 100,8"
-                     stroke="url(#gradLine)" stroke-width="2" fill="none" />
-          </svg>
-        </div>
+        <!-- Performance line chart -->
+        <canvas id="performanceChart" height="200"></canvas>
       </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Features Section -->
-<section class="py-5 section-beige">
-  <div class="container">
-    <h2 class="text-center mb-5">Features</h2>
-    <div class="row text-center">
-      <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
-        <div class="icon-circle bg-success text-white mb-3 mx-auto">
-          <i class="bi-graph-up-arrow"></i>
-        </div>
+      <div class="col-md-6">
+        <div class="icon-circle mb-3"><i class="bi-graph-up"></i></div>
         <h5 class="fw-bold">Portfolio Performance</h5>
-        <p class="text-muted small mb-0">Track your portfolio's value over time</p>
+        <p>Visualize how your portfolio value changes over time.</p>
       </div>
-      <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
-        <div class="icon-circle bg-warning text-white mb-3 mx-auto">
-          <i class="bi-pie-chart-fill"></i>
-        </div>
+    </div>
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 order-md-2">
+        <!-- Allocation pie chart -->
+        <canvas id="allocationChart" height="200"></canvas>
+      </div>
+      <div class="col-md-6 order-md-1">
+        <div class="icon-circle mb-3"><i class="bi-pie-chart-fill"></i></div>
         <h5 class="fw-bold">Asset Allocation</h5>
-        <p class="text-muted small mb-0">View a breakdown of your holdings</p>
+        <p>See the breakdown of your holdings by asset.</p>
       </div>
-      <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
-        <div class="icon-circle bg-primary text-white mb-3 mx-auto">
-          <i class="bi-bar-chart-fill"></i>
-        </div>
-        <h5 class="fw-bold">Profit/Loss Analytics</h5>
-        <p class="text-muted small mb-0">Monitor your gains and losses with ease</p>
+    </div>
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <!-- Profit/loss bar chart -->
+        <canvas id="profitChart" height="200"></canvas>
       </div>
-      <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
-        <div class="icon-circle bg-info text-white mb-3 mx-auto">
-          <i class="bi-wallet-fill"></i>
+      <div class="col-md-6">
+        <div class="icon-circle mb-3"><i class="bi-bar-chart-fill"></i></div>
+        <h5 class="fw-bold">Profit / Loss Analytics</h5>
+        <p>Track your gains and losses across assets.</p>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-md-6 order-md-2 text-center mb-4 mb-md-0">
+        <div class="feature-graphic d-flex align-items-center justify-content-center">
+          <i class="bi-diagram-3 display-4 text-warning"></i>
         </div>
-        <h5 class="fw-bold">Multi-Portfolio &amp; Multi-Chain</h5>
-        <p class="text-muted small mb-0">Handle multiple wallets and networks</p>
+      </div>
+      <div class="col-md-6 order-md-1">
+        <div class="icon-circle mb-3"><i class="bi-wallet-fill"></i></div>
+        <h5 class="fw-bold">Multi-Wallet Support</h5>
+        <p>Aggregate multiple wallets and chains in one dashboard.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Tokenomics Section -->
-<section class="py-5 section-dark">
+<!-- Trust and privacy promises -->
+<section class="section-dark">
   <div class="container">
-    <h2 class="text-center mb-5">Tokenomics</h2>
     <div class="row text-center">
       <div class="col-md-4 mb-4">
-        <h5 class="fw-bold">Supply</h5>
-        <p>1,000,000 ZEN tokens</p>
+        <i class="bi-shield-lock-fill display-6 mb-3"></i>
+        <h5 class="fw-bold">Non-Custodial</h5>
+        <p>Your keys remain yours. We never hold funds.</p>
       </div>
       <div class="col-md-4 mb-4">
-        <h5 class="fw-bold">Staking Rewards</h5>
-        <p>Earn up to 15% APY by staking</p>
+        <i class="bi-lock-fill display-6 mb-3"></i>
+        <h5 class="fw-bold">Private</h5>
+        <p>No sign-up required – your data stays in your wallet.</p>
       </div>
       <div class="col-md-4 mb-4">
-        <h5 class="fw-bold">Governance</h5>
-        <p>Vote on protocol upgrades</p>
+        <i class="bi-shield-check display-6 mb-3"></i>
+        <h5 class="fw-bold">Encrypted</h5>
+        <p>Industry best practices secure your information.</p>
       </div>
     </div>
-  </div>
+</div>
 </section>
 
-<!-- Roadmap Section -->
-<section class="py-5">
+<!-- Final call-to-action -->
+<section class="section-light text-center">
   <div class="container">
-    <h2 class="text-center mb-5">Roadmap</h2>
-    <div class="roadmap-step">
-      <h6 class="fw-bold">Q1 2025</h6>
-      <p class="mb-0">Launch staking program</p>
-    </div>
-    <div class="roadmap-step">
-      <h6 class="fw-bold">Q2 2025</h6>
-      <p class="mb-0">Release mobile wallet</p>
-    </div>
-    <div class="roadmap-step">
-      <h6 class="fw-bold">Q3 2025</h6>
-      <p class="mb-0">Introduce governance portal</p>
-    </div>
+    <h2 class="mb-4">Get Early Access</h2>
+    <form id="waitlist-form" class="waitlist-form mx-auto mb-4">
+      <input type="email" id="email" class="form-control form-control-lg" placeholder="Enter your email" required />
+      <button class="btn btn-primary btn-lg mt-3" type="submit">Join Waitlist</button>
+    </form>
+    <button class="btn btn-primary btn-lg rounded-pill" onclick="connectWallet()">Connect Your Wallet</button>
   </div>
 </section>
 
-<footer class="py-4 text-center footer">
+<footer class="footer text-center">
   <div class="container">
     <small>&copy; 2025 Zenkoro. All rights reserved.</small>
   </div>
 </footer>
 
-<!-- Wallet integration script -->
-<script>
-  async function connectWallet() {
-    if (typeof window.ethereum === 'undefined') {
-      alert('MetaMask is not installed. Please install it to continue.');
-      return;
-    }
-
-    try {
-      const accounts = await window.ethereum.request({
-        method: 'eth_requestAccounts'
-      });
-      const account = accounts[0];
-
-      // Attempt to switch to Ethereum Mainnet
-      try {
-        await window.ethereum.request({
-          method: 'wallet_switchEthereumChain',
-          params: [{ chainId: '0x1' }]
-        });
-      } catch (switchErr) {
-        console.warn('Network switch failed', switchErr);
-      }
-
-      alert('Wallet connected: ' + account);
-    } catch (err) {
-      console.error('Failed to connect wallet', err);
-      alert('Wallet connection failed.');
-    }
-  }
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>

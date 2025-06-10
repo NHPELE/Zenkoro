@@ -1,76 +1,91 @@
-/* Base typography and layout */
+/* Warm gradient palette */
+:root {
+  --amber: #f9b64d;
+  --gold: #ffd95e;
+  --coral: #ff7f63;
+  --dark-bg: #131313;
+  --light-bg: #fff8f3;
+  --text-dark: #212529;
+  --font-sans: 'Inter', Helvetica, Arial, sans-serif;
+  --font-brand: 'Orbitron', 'Inter', sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: 'Inter', Helvetica, Arial, sans-serif;
-  background-color: #0b0c10; /* fallback in case gradient fails */
-}
-
-/* Hero section gradient background */
-.hero-section {
-  background: linear-gradient(to bottom right, #2c3e50, #4ca1af);
+  font-family: var(--font-sans);
+  background-color: var(--dark-bg);
   color: #fff;
 }
 
-/* Circular icon placeholders */
+.brand-font {
+  font-family: var(--font-brand);
+  letter-spacing: 0.05em;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--amber), var(--dark-bg));
+  color: #fff;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+/* Centered container for charts */
+.chart-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-light {
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  padding: 5rem 0;
+}
+
+.section-dark {
+  background-color: var(--dark-bg);
+  color: #fff;
+  padding: 5rem 0;
+}
+
+.btn-primary {
+  background-image: linear-gradient(135deg, var(--gold), var(--coral));
+  border: none;
+  color: #111;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
 .icon-circle {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  background-image: linear-gradient(135deg, var(--gold), var(--coral));
+  color: #111;
 }
 
-.icon-circle i {
-  font-size: 1.5rem;
+.feature-graphic {
+  height: 200px;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 1rem;
 }
 
-/* Additional styling */
-.card {
-  border: none;
+.waitlist-form {
+  max-width: 420px;
 }
 
-.card.bg-dark {
-  background-color: #111 !important;
-}
-
-.card h3 {
-  color: #fff;
-}
-
-.btn-warning {
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.btn-warning:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
-}
-
-.section-beige {
-  background-color: #f8f9fa;
-}
-
-/* Dark themed section used for tokenomics and roadmap */
-.section-dark {
-  background-color: #1b1f22;
-  color: #fff;
-}
-
-/* Footer styling */
 .footer {
   background-color: #000;
   color: #ccc;
+  padding: 2rem 0;
 }
 
-.roadmap-step {
-  margin-bottom: 1.5rem;
-}
-
-/* Login page styling */
 .auth-section {
-  background: linear-gradient(to bottom right, #2c3e50, #4ca1af);
+  background: linear-gradient(135deg, var(--gold), var(--coral));
   min-height: 100vh;
   color: #fff;
   display: flex;
