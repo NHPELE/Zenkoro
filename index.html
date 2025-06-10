@@ -14,7 +14,7 @@
 <!-- Hero section with brand heading and sample chart -->
 <section class="hero-section">
   <div class="container">
-    <h1 class="display-2 fw-bold brand-font mb-3">Zenkoro</h1>
+    <h1 class="display-2 fw-bold brand-font mb-3"><i class="bi-lightning-charge-fill me-2 text-warning"></i>Zenkoro</h1>
     <p class="lead mb-4">Smart Portfolio Analytics. Private by Design.</p>
     <button class="btn btn-primary btn-lg rounded-pill mb-5" onclick="connectWallet()">
       <i class="bi-wallet2 me-1"></i> Connect Wallet
@@ -23,13 +23,16 @@
       <!-- Hero preview chart -->
       <canvas id="heroChart" height="200"></canvas>
     </div>
+    <div class="mt-5">
+      <img src="https://source.unsplash.com/1200x700/?finance,charts" class="screenshot-img" alt="Analytics dashboard preview">
+    </div>
   </div>
 </section>
 
 <!-- Overview of analytics features -->
 <section class="section-light">
   <div class="container">
-    <h2 class="text-center mb-5">Analytics at a Glance</h2>
+    <h2 class="text-center mb-5"><i class="bi-bar-chart-line-fill me-2 text-warning"></i>Analytics at a Glance</h2>
     <div class="row align-items-center mb-5">
       <div class="col-md-6">
         <!-- Performance line chart -->
@@ -104,18 +107,19 @@
 <!-- Final call-to-action -->
 <section class="section-light text-center">
   <div class="container">
-    <h2 class="mb-4">Get Early Access</h2>
+    <h2 class="mb-4"><i class="bi-stars text-warning me-2"></i>Get Early Access</h2>
     <form id="waitlist-form" class="waitlist-form mx-auto mb-4">
       <input type="email" id="email" class="form-control form-control-lg" placeholder="Enter your email" required />
-      <button class="btn btn-primary btn-lg mt-3" type="submit">Join Waitlist</button>
+      <button class="btn btn-primary btn-lg mt-3" type="submit"><i class="bi-envelope-fill me-1"></i>Join Waitlist</button>
     </form>
-    <button class="btn btn-primary btn-lg rounded-pill" onclick="connectWallet()">Connect Your Wallet</button>
+    <button class="btn btn-primary btn-lg rounded-pill" onclick="connectWallet()"><i class="bi-wallet2 me-1"></i>Connect Your Wallet</button>
   </div>
 </section>
 
 <footer class="footer text-center">
   <div class="container">
     <small>&copy; 2025 Zenkoro. All rights reserved.</small>
+    <a href="login.html" class="btn btn-primary btn-sm ms-3">Login</a>
   </div>
 </footer>
 

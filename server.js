@@ -19,8 +19,8 @@ app.use(express.json());
 const users = [
   {
     username: 'user',
-    // password: 12345
-    passwordHash: '$2b$10$Km2mbth7vcOfvjoh.lFUVOrlb6igqOKLJqH4TiR3KO/CR8c4J8SKO'
+    // password: 1234
+    passwordHash: '$2b$10$4I/vsuOMAl/uLrzxnIM9euK0/sLu1bkBFvTnwU/UrZyvHEWUfybYO'
   }
 ];
 
