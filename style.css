@@ -67,3 +67,21 @@ body {
 .roadmap-step {
   margin-bottom: 1.5rem;
 }
+
+/* Login page styling */
+.auth-section {
+  background: linear-gradient(to bottom right, #2c3e50, #4ca1af);
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.auth-card {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+  padding: 2rem;
+}
