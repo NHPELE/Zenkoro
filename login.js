@@ -20,7 +20,7 @@ form.addEventListener('submit', async function (e) {
             const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
             modal.hide();
           } else if (window.location.pathname.endsWith('login.html')) {
-            window.location.href = 'index.html';
+            window.location.href = 'dashboard.html';
           }
         } else {
           errorEl.classList.remove('d-none');

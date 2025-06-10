@@ -4,7 +4,7 @@ This repository contains a simple landing page for **ZENKORO**.
 
 ## Running the Frontend
 
-Open `index.html` in your browser to see the page. Styling is provided in `style.css`. The login button links to `login.html`, which uses `login.js` to communicate with the backend.
+Open `index.html` in your browser to see the page. Styling is provided in `style.css`. The login button links to `login.html`, which uses `login.js` to communicate with the backend. After a successful login you will be redirected to `dashboard.html` where a placeholder portfolio dashboard is displayed.
 
 The landing page now supports connecting an Ethereum wallet via MetaMask. Click
 the **Connect Wallet** button to trigger MetaMask and grant access to your
