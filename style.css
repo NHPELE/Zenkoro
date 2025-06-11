@@ -86,6 +86,34 @@ body {
   border-radius: 1rem;
 }
 
+/* Layout for new marketing site */
+.screenshot-section {
+  padding: 4rem 0;
+}
+
+.screenshot-placeholder {
+  width: 100%;
+  height: auto;
+  background: linear-gradient(135deg, var(--gold), var(--amber));
+  border-radius: 1rem;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+.hero-graph {
+  max-width: 360px;
+  margin: 2rem auto;
+}
+
+.cta-section {
+  background-color: var(--dark-bg);
+  color: #fff;
+  padding: 5rem 0;
+}
+
+.trust svg {
+  fill: var(--gold);
+}
+
 .screenshot-img {
   max-width: 100%;
   border-radius: 1rem;
