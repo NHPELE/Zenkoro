@@ -7,7 +7,7 @@
   --light-bg: #fff8f3;
   --text-dark: #212529;
   --font-sans: 'Inter', Helvetica, Arial, sans-serif;
-  --font-brand: 'proxima-nova', 'Inter', sans-serif;
+  --font-brand: 'graphie', sans-serif;
 }
 
 body {
@@ -104,6 +104,10 @@ body {
 .hero-graph {
   max-width: 360px;
   margin: 2rem auto;
+}
+
+.hero-stats p {
+  margin-bottom: 0.25rem;
 }
 
 .cta-section {

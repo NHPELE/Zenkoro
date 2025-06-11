@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/rhg3ueo.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -22,10 +23,16 @@
     <h2 class="display-5 fw-bold mb-3 animate">One dashboard. All your crypto</h2>
     <p class="h5 fw-semibold mb-3 animate">Private by design</p>
     <p class="lead mb-4 animate">A unified view of your entire crypto portfolio across chains &mdash; ZENKORO puts you in control with smart insights and uncompromising privacy</p>
-    <div class="hero-graph animate">
-      <svg viewBox="0 0 300 150" class="w-100" xmlns="http://www.w3.org/2000/svg">
-        <polyline fill="none" stroke="#ffd95e" stroke-width="4" points="0,120 50,90 100,110 150,70 200,80 250,40 300,60"/>
-      </svg>
+    <div class="row justify-content-center align-items-center mb-3 animate">
+      <div class="col-md-7">
+        <canvas id="heroChart" height="160" class="w-100 hero-graph"></canvas>
+      </div>
+      <div class="col-md-5 text-start hero-stats mt-4 mt-md-0">
+        <h3 class="h5">Portfolio Value</h3>
+        <p class="display-6 fw-bold mb-1">$12,450</p>
+        <p class="text-success mb-1">24h +$350</p>
+        <p class="text-success">All-Time +$3,200</p>
+      </div>
     </div>
     <div class="d-flex justify-content-center gap-3 mt-4">
       <button id="wallet-btn-hero" class="btn btn-primary btn-lg rounded-pill" onclick="connectWallet()">Connect Wallet</button>
@@ -39,10 +46,7 @@
   <div class="container">
     <div class="row align-items-center gy-4">
       <div class="col-md-6">
-        <svg viewBox="0 0 300 200" class="screenshot-placeholder" xmlns="http://www.w3.org/2000/svg">
-          <rect width="300" height="200" rx="15" fill="#e9ecef" />
-          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" fill="#6c757d">Portfolio Snapshot</text>
-        </svg>
+        <canvas id="performanceChart" height="200" class="screenshot-img w-100"></canvas>
       </div>
       <div class="col-md-6">
         <h2 class="fw-bold mb-3 animate">Unified Portfolio View</h2>
@@ -56,10 +60,7 @@
   <div class="container">
     <div class="row align-items-center gy-4">
       <div class="col-md-6 order-md-2">
-        <svg viewBox="0 0 300 200" class="screenshot-placeholder" xmlns="http://www.w3.org/2000/svg">
-          <rect width="300" height="200" rx="15" fill="#e9ecef" />
-          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" fill="#6c757d">Insightful Charts</text>
-        </svg>
+        <canvas id="allocationChart" height="200" class="screenshot-img w-100"></canvas>
       </div>
       <div class="col-md-6 order-md-1 text-md-end">
         <h2 class="fw-bold mb-3 animate">Actionable Insights</h2>
@@ -73,10 +74,7 @@
   <div class="container">
     <div class="row align-items-center gy-4">
       <div class="col-md-6">
-        <svg viewBox="0 0 300 200" class="screenshot-placeholder" xmlns="http://www.w3.org/2000/svg">
-          <rect width="300" height="200" rx="15" fill="#e9ecef" />
-          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" fill="#6c757d">Private by Design</text>
-        </svg>
+        <canvas id="profitChart" height="200" class="screenshot-img w-100"></canvas>
       </div>
       <div class="col-md-6">
         <h2 class="fw-bold mb-3 animate">Privacy First</h2>
