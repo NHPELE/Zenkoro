@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zenkoro - Crypto Portfolio Tracker</title>
+  <title>ZENKORO - Crypto Portfolio Tracker</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/rhg3ueo.css">
@@ -13,24 +13,25 @@
 
 <header class="py-3 text-center">
   <a href="index.html" class="text-decoration-none text-reset">
-    <h1 class="display-4 fw-bold brand-font mb-0">Zenkoro</h1>
+    <h1 class="display-4 fw-bold brand-font mb-0">ZENKORO</h1>
   </a>
 </header>
 
 <section class="hero-section text-center">
   <div class="container">
-    <h2 class="display-5 fw-bold mb-3 animate">One dashboard. All your crypto.</h2>
-    <p class="h5 fw-semibold mb-3 animate">Private by design.</p>
-    <p class="lead mb-4 animate">A unified view of your entire crypto portfolio across chains &mdash; Zenkoro puts you in control with smart insights and uncompromising privacy.</p>
+    <h2 class="display-5 fw-bold mb-3 animate">One dashboard. All your crypto</h2>
+    <p class="h5 fw-semibold mb-3 animate">Private by design</p>
+    <p class="lead mb-4 animate">A unified view of your entire crypto portfolio across chains &mdash; ZENKORO puts you in control with smart insights and uncompromising privacy</p>
     <div class="hero-graph animate">
       <svg viewBox="0 0 300 150" class="w-100" xmlns="http://www.w3.org/2000/svg">
         <polyline fill="none" stroke="#ffd95e" stroke-width="4" points="0,120 50,90 100,110 150,70 200,80 250,40 300,60"/>
       </svg>
     </div>
     <div class="d-flex justify-content-center gap-3 mt-4">
-      <button class="btn btn-primary btn-lg rounded-pill" onclick="connectWallet()">Connect Wallet</button>
+      <button id="wallet-btn-hero" class="btn btn-primary btn-lg rounded-pill" onclick="connectWallet()">Connect Wallet</button>
       <a href="details.html" class="btn btn-secondary btn-lg rounded-pill">Learn More</a>
     </div>
+    <p id="wallet-address" class="mt-3 fw-semibold"></p>
   </div>
 </section>
 
@@ -45,7 +46,7 @@
       </div>
       <div class="col-md-6">
         <h2 class="fw-bold mb-3 animate">Unified Portfolio View</h2>
-        <p class="animate">Link your wallets with one click and watch your holdings sync instantly.</p>
+        <p class="animate">Link your wallets with one click and watch your holdings sync instantly</p>
       </div>
     </div>
   </div>
@@ -62,7 +63,7 @@
       </div>
       <div class="col-md-6 order-md-1 text-md-end">
         <h2 class="fw-bold mb-3 animate">Actionable Insights</h2>
-        <p class="animate">Visualize performance trends and seize opportunities with up-to-the-minute analytics.</p>
+        <p class="animate">Visualize performance trends and seize opportunities with up-to-the-minute analytics</p>
       </div>
     </div>
   </div>
@@ -79,7 +80,7 @@
       </div>
       <div class="col-md-6">
         <h2 class="fw-bold mb-3 animate">Privacy First</h2>
-        <p class="animate">Your keys never leave your possession. All data remains encrypted and under your control.</p>
+        <p class="animate">Your keys never leave your possession. All data remains encrypted and under your control</p>
       </div>
     </div>
   </div>
@@ -87,15 +88,15 @@
 
 <section class="cta-section text-center">
   <div class="container">
-    <h2 class="display-5 fw-bold mb-3 animate">Stay ahead of the market.</h2>
-    <p class="mb-4 animate">Join thousands of investors who rely on Zenkoro to stay ahead.</p>
-    <button class="btn btn-primary btn-lg rounded-pill mb-3 animate" onclick="connectWallet()">Connect Wallet</button>
+    <h2 class="display-5 fw-bold mb-3 animate">Stay ahead of the market</h2>
+    <p class="mb-4 animate">Join thousands of investors who rely on ZENKORO to stay ahead</p>
+    <button id="wallet-btn-cta" class="btn btn-primary btn-lg rounded-pill mb-3 animate" onclick="connectWallet()">Connect Wallet</button>
   </div>
 </section>
 
 <footer class="footer text-center">
   <div class="container">
-    <small>&copy; 2025 Zenkoro. All rights reserved.</small>
+    <small>&copy; 2025 ZENKORO All rights reserved</small>
   </div>
 </footer>
 
