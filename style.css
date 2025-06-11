@@ -7,7 +7,7 @@
   --light-bg: #fff8f3;
   --text-dark: #212529;
   --font-sans: 'Inter', Helvetica, Arial, sans-serif;
-  --font-brand: 'Orbitron', 'Inter', sans-serif;
+  --font-brand: 'proxima-nova', 'Inter', sans-serif;
 }
 
 body {
@@ -63,10 +63,12 @@ body {
   background-image: linear-gradient(135deg, var(--gold), var(--coral));
   border: none;
   color: #111;
+  transition: transform 0.2s;
 }
 
 .btn-primary:hover {
   opacity: 0.9;
+  transform: scale(1.05);
 }
 
 .icon-circle {
@@ -144,4 +146,70 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 1rem;
   padding: 2rem;
+}
+
+/* micro animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGraph {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.animate.in-view {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.hero-graph {
+  animation: pulseGraph 4s ease-in-out infinite;
+}
+
+.screenshot-img {
+  animation: floatImg 6s ease-in-out infinite;
+}
+
+@keyframes floatImg {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* FAQ styles */
+.faq-section {
+  padding: 5rem 0;
+}
+
+.faq-item {
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-item[open] .faq-answer {
+  opacity: 1;
+  max-height: 500px;
 }
