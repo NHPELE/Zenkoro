@@ -1,131 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zenkoro - Smart Portfolio Analytics</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zenkoro - Crypto Portfolio Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Hero section with brand heading and sample chart -->
-<section class="hero-section">
+<section class="hero-section text-center">
   <div class="container">
-    <h1 class="display-2 fw-bold brand-font mb-3"><i class="bi-lightning-charge-fill me-2 text-warning"></i>Zenkoro</h1>
-    <p class="lead mb-4">Smart Portfolio Analytics. Private by Design.</p>
-    <button class="btn btn-primary btn-lg rounded-pill mb-5" onclick="connectWallet()">
-      <i class="bi-wallet2 me-1"></i> Connect Wallet
-    </button>
-    <div class="chart-container mx-auto">
-      <!-- Hero preview chart -->
-      <canvas id="heroChart" height="200"></canvas>
+    <h1 class="display-3 fw-bold brand-font mb-3">Zenkoro</h1>
+    <p class="lead mb-4">The smarter way to track every crypto move.</p>
+    <div class="hero-graph">
+      <svg viewBox="0 0 300 150" class="w-100" xmlns="http://www.w3.org/2000/svg">
+        <polyline fill="none" stroke="#ffd95e" stroke-width="4" points="0,120 50,90 100,110 150,70 200,80 250,40 300,60"/>
+      </svg>
     </div>
-    <div class="mt-5">
-      <img src="https://source.unsplash.com/1200x700/?finance,charts" class="screenshot-img" alt="Analytics dashboard preview">
+    <button class="btn btn-primary btn-lg rounded-pill mt-4" onclick="connectWallet()">Connect Wallet</button>
+  </div>
+</section>
+
+<section class="screenshot-section section-light">
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      <div class="col-md-6">
+        <svg viewBox="0 0 300 200" class="screenshot-placeholder" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="200" rx="15" fill="#e9ecef" />
+          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" fill="#6c757d">Portfolio Snapshot</text>
+        </svg>
+      </div>
+      <div class="col-md-6">
+        <h2 class="fw-bold mb-3">Effortless Tracking</h2>
+        <p>Connect all your wallets in seconds and watch your entire portfolio update in real time.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Overview of analytics features -->
-<section class="section-light">
+<section class="screenshot-section section-dark">
   <div class="container">
-    <h2 class="text-center mb-5"><i class="bi-bar-chart-line-fill me-2 text-warning"></i>Analytics at a Glance</h2>
-    <div class="row align-items-center mb-5">
-      <div class="col-md-6">
-        <!-- Performance line chart -->
-        <canvas id="performanceChart" height="200"></canvas>
-      </div>
-      <div class="col-md-6">
-        <div class="icon-circle mb-3"><i class="bi-graph-up"></i></div>
-        <h5 class="fw-bold">Portfolio Performance</h5>
-        <p>Visualize how your portfolio value changes over time.</p>
-      </div>
-    </div>
-    <div class="row align-items-center mb-5">
+    <div class="row align-items-center gy-4">
       <div class="col-md-6 order-md-2">
-        <!-- Allocation pie chart -->
-        <canvas id="allocationChart" height="200"></canvas>
+        <svg viewBox="0 0 300 200" class="screenshot-placeholder" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="200" rx="15" fill="#e9ecef" />
+          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" fill="#6c757d">Insightful Charts</text>
+        </svg>
       </div>
-      <div class="col-md-6 order-md-1">
-        <div class="icon-circle mb-3"><i class="bi-pie-chart-fill"></i></div>
-        <h5 class="fw-bold">Asset Allocation</h5>
-        <p>See the breakdown of your holdings by asset.</p>
-      </div>
-    </div>
-    <div class="row align-items-center mb-5">
-      <div class="col-md-6">
-        <!-- Profit/loss bar chart -->
-        <canvas id="profitChart" height="200"></canvas>
-      </div>
-      <div class="col-md-6">
-        <div class="icon-circle mb-3"><i class="bi-bar-chart-fill"></i></div>
-        <h5 class="fw-bold">Profit / Loss Analytics</h5>
-        <p>Track your gains and losses across assets.</p>
-      </div>
-    </div>
-    <div class="row align-items-center">
-      <div class="col-md-6 order-md-2 text-center mb-4 mb-md-0">
-        <div class="feature-graphic d-flex align-items-center justify-content-center">
-          <i class="bi-diagram-3 display-4 text-warning"></i>
-        </div>
-      </div>
-      <div class="col-md-6 order-md-1">
-        <div class="icon-circle mb-3"><i class="bi-wallet-fill"></i></div>
-        <h5 class="fw-bold">Multi-Wallet Support</h5>
-        <p>Aggregate multiple wallets and chains in one dashboard.</p>
+      <div class="col-md-6 order-md-1 text-md-end">
+        <h2 class="fw-bold mb-3">Actionable Insights</h2>
+        <p>Visualize gains, losses and trends instantly so you can seize opportunities before anyone else.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Trust and privacy promises -->
-<section class="section-dark">
+<section class="screenshot-section section-light">
   <div class="container">
-    <div class="row text-center">
-      <div class="col-md-4 mb-4">
-        <i class="bi-shield-lock-fill display-6 mb-3"></i>
-        <h5 class="fw-bold">Non-Custodial</h5>
-        <p>Your keys remain yours. We never hold funds.</p>
+    <div class="row align-items-center gy-4">
+      <div class="col-md-6">
+        <svg viewBox="0 0 300 200" class="screenshot-placeholder" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="200" rx="15" fill="#e9ecef" />
+          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" fill="#6c757d">Private by Design</text>
+        </svg>
       </div>
-      <div class="col-md-4 mb-4">
-        <i class="bi-lock-fill display-6 mb-3"></i>
-        <h5 class="fw-bold">Private</h5>
-        <p>No sign-up required – your data stays in your wallet.</p>
-      </div>
-      <div class="col-md-4 mb-4">
-        <i class="bi-shield-check display-6 mb-3"></i>
-        <h5 class="fw-bold">Encrypted</h5>
-        <p>Industry best practices secure your information.</p>
+      <div class="col-md-6">
+        <h2 class="fw-bold mb-3">Secure &amp; Private</h2>
+        <p>Zenkoro never holds your keys. Your data stays with you, encrypted and protected.</p>
       </div>
     </div>
-</div>
+  </div>
 </section>
 
-<!-- Final call-to-action -->
-<section class="section-light text-center">
+<section class="cta-section text-center">
   <div class="container">
-    <h2 class="mb-4"><i class="bi-stars text-warning me-2"></i>Get Early Access</h2>
-    <form id="waitlist-form" class="waitlist-form mx-auto mb-4">
-      <input type="email" id="email" class="form-control form-control-lg" placeholder="Enter your email" required />
-      <button class="btn btn-primary btn-lg mt-3" type="submit"><i class="bi-envelope-fill me-1"></i>Join Waitlist</button>
-    </form>
-    <button class="btn btn-primary btn-lg rounded-pill" onclick="connectWallet()"><i class="bi-wallet2 me-1"></i>Connect Your Wallet</button>
+    <h2 class="display-5 fw-bold mb-3">Ready to grow your portfolio?</h2>
+    <p class="mb-4">Join over <strong>20,000</strong> investors who trust Zenkoro to keep them ahead of the market.</p>
+    <button class="btn btn-primary btn-lg rounded-pill mb-3" onclick="connectWallet()">Connect Wallet</button>
+    <div class="trust d-flex flex-column align-items-center">
+      <svg width="110" height="20" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#ffd95e">
+          <polygon points="10,0 13,7 20,7 15,11 17,18 10,14 3,18 5,11 0,7 7,7"/>
+          <polygon transform="translate(22)" points="10,0 13,7 20,7 15,11 17,18 10,14 3,18 5,11 0,7 7,7"/>
+          <polygon transform="translate(44)" points="10,0 13,7 20,7 15,11 17,18 10,14 3,18 5,11 0,7 7,7"/>
+          <polygon transform="translate(66)" points="10,0 13,7 20,7 15,11 17,18 10,14 3,18 5,11 0,7 7,7"/>
+          <polygon transform="translate(88)" points="10,0 13,7 20,7 15,11 17,18 10,14 3,18 5,11 0,7 7,7"/>
+        </g>
+      </svg>
+      <p class="small mt-2 text-muted">Rated 4.8/5 by our users</p>
+    </div>
   </div>
 </section>
 
 <footer class="footer text-center">
   <div class="container">
     <small>&copy; 2025 Zenkoro. All rights reserved.</small>
-    <a href="login.html" class="btn btn-primary btn-sm ms-3">Login</a>
   </div>
 </footer>
 
-  <!-- JS libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <script src="scripts.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
