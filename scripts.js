@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data: {
           labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
           datasets: [{
-            data: [10,12,9,14,13,15,16],
+            data: [1000,1200,1300,1500,1700,1850,2000],
             borderColor: '#ffd95e',
             tension: 0.4,
             fill: false
