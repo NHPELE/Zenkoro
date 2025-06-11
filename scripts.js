@@ -15,10 +15,20 @@ async function connectWallet() {
     } catch (switchErr) {
       console.warn('Network switch failed', switchErr);
     }
-    alert('Wallet connected: ' + account);
+    const display = document.getElementById('wallet-address');
+    if (display) {
+      display.textContent = 'Connected wallet: ' + account;
+    }
+    ['wallet-btn-hero', 'wallet-btn-cta'].forEach(id => {
+      const btn = document.getElementById(id);
+      if (btn) {
+        btn.textContent = 'Wallet Connected';
+        btn.disabled = true;
+      }
+    });
   } catch (err) {
     console.error('Failed to connect wallet', err);
-    alert('Wallet connection failed.');
+    alert('Wallet connection failed');
   }
 }
 
