@@ -34,6 +34,8 @@ npm start
 
 Set `JWT_SECRET` in a `.env` file to override the default development secret.
 
-Run `npm test` to execute the API test suite.
+Run `npm test` to execute the API test suite. The `pretest` script installs
+dependencies automatically using `npm ci` so no separate install step is
+required.
 
 The dashboard lists sample coin holdings and now includes an interactive portfolio chart powered by Chart.js.
