@@ -233,3 +233,34 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* enhanced buttons */
+.btn {
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.btn:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.btn-secondary:hover {
+  transform: translateY(-1px);
+}
+.btn-primary:hover {
+  transform: scale(1.05) translateY(-1px);
+}
+
+/* section title styling */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+.section-title i {
+  color: var(--coral);
+  font-size: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .hero-section { padding: 3rem 0; }
+  .hero-graph { max-width: 260px; }
+  .hero-stats { text-align: center; }
+}

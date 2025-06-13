@@ -144,5 +144,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { threshold: 0.2 });
-  document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+  document.querySelectorAll('.animate, .scroll-reveal').forEach(el => observer.observe(el));
 }); // end DOMContentLoaded

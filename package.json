@@ -6,6 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "node server.js",
+    "pretest": "npm ci",
     "test": "node --test"
   },
   "dependencies": {
